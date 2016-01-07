@@ -56,7 +56,7 @@ public class UserRestControllerTest {
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
 		List<User> userList = new ArrayList<>();
 		addUsers(userList);
-		when(userService.getUsers()).thenReturn(userList);
+		when(userService.getUsers("firstName")).thenReturn(userList);
 		when(userService.findUserById(TestUtils.newUser4.getId()))
 				.thenReturn(generateUser(new User(), TestUtils.newUser4));
 		when(userService.saveUser(TestUtils.createUser5)).thenReturn(generateUser(new User(), TestUtils.createUser5));
